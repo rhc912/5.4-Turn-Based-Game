@@ -1,47 +1,38 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>5 4 Turn Based Game</title>
-    <link rel="stylesheet" href="css/app.css">
-  </head>
-  <body>
+ <head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+   <title>5 4 Turn Based Game</title>
+   <link rel="stylesheet" href="css/app.css">
+ </head>
+ <body>
 
-  <div class="container">
-    <div class="wrapper">
-    <div class="row">
-      <div class="main-styling">
-        <h1>Meat Vs Veggies</h1>
-        <h3>How to play Food Battle</h3>
-        <p>Select your character from the three options below.</p>
-        <p>To begin press Fight.</p>
-        <p>When it is your turn, attack your enemy.</p>
-      </div>
-      <div class="selection col-md-12">
-          <h1>Meat</h1>
-        <select name="select">
-          <option value="beef">Beef</option>
-          <option value="turkey">Turkey</option>
-          <option value="chicken">Chicken</option>
-      </select>
-
-          <h1>Veggies</h1>
-      <select name="select">
-        <option value="tofu">Tofu</option>
-        <option value="soy">Soy</option>
-        <option value="carrot">Carrot</option>
-    </select>
-      </div>
+ <div class="container">
+   <div class="row">
+     <div class="col-md-12">
+       <h1>Meat</h1>
+       <select name="select">
+         <option value="beef">Beef</option>
+         <option value="turkey">Turkey</option>
+         <option value="chicken">Chicken</option>
+       </select>
+       <h1>Veggies</h1>
+       <select name="select">
+         <option value="tofu">Tofu</option>
+         <option value="soy">Soy</option>
+         <option value="carrot">Carrot</option>
+       </select>
+     </div>
 
 
-    </div>
+   </div>
 
-    <div class="row js-fight">
-      <!--populated by templates-->
-      </div>
-    </div>
-  </div>  <!--container-->
-     <script src="js/bundle.js"></script>
-  </body>
+   <div class="row js-fight">
+     <!--populated by templates-->
+   </div>
+
+ </div>  <!--container-->
+    <script src="js/bundle.js"></script>
+ </body>
 </html>
