@@ -1,7 +1,8 @@
 <!doctype html>
-{{# each }}
-  <div class="col-md-6">
-    <img class="" src="{{image}}" alt="{{name}}" data-name="{{name}}"/><br/>
-    <h3>{{name}}</h3>
-  </div>
-{{/each}}
+
+<select class="heros-selection">
+  <option value="">Select Character</option>
+  {{#each meats}}
+    <option value="{{@index}}">{{name}}</option>
+  {{/each}}
+</select>

@@ -5,6 +5,7 @@ function Fighters(config){
   $.extend(this, config);
   this.health = config.health || 60;
   this.name = config.name;
+  this.image = config.image;
   //this.battleCry = config.battleCry;
 }
 
@@ -15,13 +16,13 @@ Fighters.prototype.attack = function(victim) {
 
 
 function Hero(config){
-  Fighter.call(this, config);
+  Fighters.call(this, config);
 }
 
 Hero.prototype = new Fighters();
 
 function Enemy(config){
-  Fighter.call(this, config);
+  Fighters.call(this, config);
 }
 
 Enemy.prototype = new Fighters();
