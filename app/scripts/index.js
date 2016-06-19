@@ -74,19 +74,25 @@ $(function(){
 
   $('.btn-primary').on('click', function(event){
     event.preventDefault();
-    var currentEnemyHealth = selectedEnemy.health = selectedEnemy.health - attackGenerator();
 
+    var currentEnemyHealth = selectedEnemy.health = selectedEnemy.health - attackGenerator();
     document.getElementById("enemyStatus").textContent = 'Current Veggie Health: ' + currentEnemyHealth;
 
-    var currentHeroHealth = selectedHero.health = selectedHero.health - attackGenerator();
-    document.getElementById("heroStatus").textContent = 'Current Meat Health: ' + currentHeroHealth;
+    window.setTimeout(function(){
+      var currentHeroHealth = selectedHero.health = selectedHero.health - attackGenerator();
+      document.getElementById("heroStatus").textContent = 'Current Meat Health: ' + currentHeroHealth;
+    },2000);
+    //var currentHeroHealth = selectedHero.health = selectedHero.health - attackGenerator();
+    //document.getElementById("heroStatus").textContent = 'Current Meat Health: ' + currentHeroHealth;
 
     if (currentEnemyHealth <= 0){
-        alert('Meat wins!')
+      alert('Meat wins! Click OK to refresh the page.')
+      window.location.reload(true);
     }else if (currentHeroHealth <= 0) {
-      alert('Veggie wins!')
-
+      alert('Veggie wins! Click OK to refresh the page.')
+      window.location.reload(true);
     }
+
   });
 
 });

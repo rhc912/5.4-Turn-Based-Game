@@ -24,9 +24,12 @@ h1, h3, p{
   text-align: center;
 }
 //Wrapper
-.wrapper{
-  background: url('https://drawception.com/pub/panels/2013/2-12/mzA6EqY27q-2.png') no-repeat;
+.wrapper-fluid{
+  background: url('https://drawception.com/pub/panels/2013/2-12/mzA6EqY27q-2.png');
   background-size:cover;
+  height: 800px;
+  max-width: 100%;
+  position: relative;
 }
 // Select menu
 .selection{

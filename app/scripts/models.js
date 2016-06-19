@@ -9,11 +9,12 @@ function Fighters(config){
   //this.battleCry = config.battleCry;
 }
 
+/*
 Fighters.prototype.attack = function(victim) {
   var damage = _.random(20);
   victim.health = victim.health - damage;
 };
-
+*/
 
 function Hero(config){
   Fighters.call(this, config);
