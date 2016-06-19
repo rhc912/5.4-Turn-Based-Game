@@ -10,15 +10,15 @@ $(function(){
 //Main Characters
   var meats = [
     new models.Hero({
-      name: 'beef',
+      name: 'Beef',
       image: 'http://wallpoper.com/images/00/44/25/81/piece-of-meat-cartoon_00442581.jpg'
     }),
     new models.Hero({
-      name: 'turkey',
+      name: 'Turkey',
       image: 'http://i.istockimg.com/file_thumbview_approve/7594193/3/stock-illustration-7594193-cartoon-roast-turkey.jp'
     }),
     new models.Hero({
-      name: 'chicken',
+      name: 'Chicken',
       image: 'http://www.clipartbest.com/cliparts/LcK/k4M/LcKk4M8ki.jpeg'
     })
   ];
@@ -26,15 +26,16 @@ $(function(){
   console.log(meats);
   var veggies = [
     new models.Enemy({
-      name: 'broccoli',
+      name: 'Broccoli',
       image: 'http://previews.123rf.com/images/yeletkeshet/yeletkeshet1211/yeletkeshet121100243/16563356-happy-cartoon-broccoli-Stock-Vector-vegetable.jpg'
     }),
     new models.Enemy({
-      name: 'brussel sprouts',
-      image: 'http://blog.nativefoods.com/.a/6a0112796f38d028a40154377029c8970c-pi '}),
+      name: 'Brussel Sprouts',
+      image: 'http://blog.nativefoods.com/.a/6a0112796f38d028a40154377029c8970c-pi'}),
     new models.Enemy({
-      name: 'carrots',
-      image:'http://preview.turbosquid.com/Preview/2014/05/19__04_29_47/main.png4c16aac7-fba7-4011-9a59-179fec27ffddOriginal.jpg'})
+      name: 'Carrots',
+      image:
+      'http://preview.turbosquid.com/Preview/2014/05/19__04_29_47/main.png4c16aac7-fba7-4011-9a59-179fec27ffddOriginal.jpg'})
   ];
 
   /* Character vars */
@@ -62,7 +63,31 @@ $(function(){
   function selectEnemy(){
     var randomEnemyIndex = Math.floor(Math.random() * 3);
     return veggies[randomEnemyIndex];
+    //console.log(veggies[randomEnemyIndex]);
   }
+  selectEnemy();
+
+  function attackGenerator(){
+    var attackValue = _.random(20);
+    return attackValue;
+  }
+
+  $('.btn-primary').on('click', function(event){
+    event.preventDefault();
+    var currentEnemyHealth = selectedEnemy.health = selectedEnemy.health - attackGenerator();
+
+    document.getElementById("enemyStatus").textContent = 'Current Veggie Health: ' + currentEnemyHealth;
+
+    var currentHeroHealth = selectedHero.health = selectedHero.health - attackGenerator();
+    document.getElementById("heroStatus").textContent = 'Current Meat Health: ' + currentHeroHealth;
+
+    if (currentEnemyHealth <= 0){
+        alert('Meat wins!')
+    }else if (currentHeroHealth <= 0) {
+      alert('Veggie wins!')
+
+    }
+  });
 
 });
 
