@@ -76,19 +76,17 @@ $(function(){
     event.preventDefault();
 
     var currentEnemyHealth = selectedEnemy.health = selectedEnemy.health - attackGenerator();
-    document.getElementById("enemyStatus").textContent = 'Current Veggie Health: ' + currentEnemyHealth;
+    document.getElementById('enemyStatus').textContent = 'Current Veggie Health: ' + currentEnemyHealth;
 
     window.setTimeout(function(){
       var currentHeroHealth = selectedHero.health = selectedHero.health - attackGenerator();
-      document.getElementById("heroStatus").textContent = 'Current Meat Health: ' + currentHeroHealth;
-    },2000);
-    //var currentHeroHealth = selectedHero.health = selectedHero.health - attackGenerator();
-    //document.getElementById("heroStatus").textContent = 'Current Meat Health: ' + currentHeroHealth;
+      document.getElementById('heroStatus').textContent = 'Current Meat Health: ' + currentHeroHealth;
+    }, 2000);
 
     if (currentEnemyHealth <= 0){
       alert('Meat wins! Click OK to refresh the page.')
       window.location.reload(true);
-    }else if (currentHeroHealth <= 0) {
+    } else if (currentHeroHealth <= 0) {
       alert('Veggie wins! Click OK to refresh the page.')
       window.location.reload(true);
     }
